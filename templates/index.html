@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI EdTech Predictor</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="glass-header">
+            <h1 class="gradient-text">EdTech Predictor Pro</h1>
+            <p>Calculate your GPA and use AI to predict your final course grades based on study habits.</p>
+        </header>
+
+        <section class="modules">
+            <!-- GPA Calculator Module -->
+            <div class="card glass-card fade-in">
+                <h2>GPA Calculator</h2>
+                <div class="form-group">
+                    <label for="grades-input">Enter grades separated by commas (e.g., 85, 92, 78):</label>
+                    <input type="text" id="grades-input" placeholder="85, 92, 78, 95">
+                    <button class="btn btn-primary" onclick="calculateGPA()">Calculate GPA</button>
+                </div>
+                <div id="gpa-result" class="result hidden">
+                    <h3>Your GPA: <span id="gpa-value" class="highlight"></span></h3>
+                </div>
+            </div>
+
+            <!-- Grade Predictor Module -->
+            <div class="card glass-card fade-in delay-1">
+                <h2>Grade AI Predictor</h2>
+                <div class="form-group">
+                    <label for="study-hours">Weekly Study Hours:</label>
+                    <input type="number" id="study-hours" placeholder="e.g. 10" min="0" max="168">
+                </div>
+                <div class="form-group">
+                    <label for="prev-gpa">Previous GPA (0.0 - 4.0):</label>
+                    <input type="number" id="prev-gpa" placeholder="e.g. 3.2" min="0" max="4.0" step="0.1">
+                    <button class="btn btn-secondary" onclick="predictGrade()">AI Predict</button>
+                </div>
+                <div id="prediction-result" class="result hidden">
+                    <h3>Predicted Final Grade: <span id="prediction-value" class="highlight"></span>%</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/static/script.js"></script>
+</body>
+</html>
